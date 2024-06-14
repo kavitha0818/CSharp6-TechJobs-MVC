@@ -1,4 +1,8 @@
-﻿<div class="container body-content">
+﻿@{
+    ViewData["Title"] = ViewBag.Title;
+}
+
+<div class="container body-content">
     <h1>@ViewBag.title</h1>
     <h2 class="centered">View Jobs By Category</h2>
 </div>
@@ -11,7 +15,6 @@
         }
     </tr>
     <tr>
-        <!-- TODO #2: Complete the View Jobs By Category Table. -->
 
         <td>
             <a asp-controller="List" asp-action="Jobs" asp-route-column="All" asp-route-value="View All">View All</a>
@@ -24,7 +27,8 @@
                     {
                         <li>
 
-                            <a asp-controller="List" asp-action="Jobs" asp-route-column="@category.Key" asp-route-value="@item">@item</a>
+                            <a asp-controller="List" asp-action="Jobs" asp-route-column="@category.Key"
+                                asp-route-value="@item">@item</a>
                         </li>
                     }
 
